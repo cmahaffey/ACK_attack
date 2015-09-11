@@ -1,9 +1,13 @@
+
+
+
+
 <%= form_tag '/sessions', method: :post do %>
 <%= label_tag :username %>
 <%= text_field_tag :username %>
 <%= label_tag :password %>
-<%= password_field_tag :username %>
-<%= submit_tag %>
+<%= password_field_tag :password %>
+<%= submit_tag 'Log_in'%>
 
 
 <% end %>

@@ -10,6 +10,10 @@ include SessionsHelper
 
   end
 
+  def profile
+    #authenticate!
+    @user = current_user
+    end
 
 
   def new
@@ -18,7 +22,7 @@ include SessionsHelper
 
   def create
     user = User.create(user_params)
-    redirect_to '/'
+    redirect_to '/log_in'
   end
 
 
