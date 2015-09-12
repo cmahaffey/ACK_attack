@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/users/profile' => 'users#profile', as: :user_profile
 
 post '/sessions' => 'sessions#create'
-delete '/sessiuons' => 'sessions#destroy', as: :log_out
+delete '/sessions' => 'sessions#destroy', as: :log_out
 
 
 
