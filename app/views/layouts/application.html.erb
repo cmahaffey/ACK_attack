@@ -5,6 +5,37 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script type="text/template", id='movieListtempplate'>
+    <%% _.each(movies, function(movie) { %>
+      <h1>  Title: <%%= movie.get('Title') %> </h1>
+        Actors:  <%%= movie.get('Actors') %>
+      <p>  Plot: <%%= movie.get('Plot') %> <p>
+        <img src="<%%= movie.get('Poster')%>" alt="We need an API key to get the poster" />
+     <%% }); %>
+  </script>
+
+
+
+  <script type="text/template", id='albumListtempplate'>
+     <table class="table striped">
+       <thead>
+         <tr>
+           <th>Album Name</th><th>album cover</th><th>spotify Id</th><th></th>
+         </tr>
+       </thead>
+       <tbody>
+         <%% _.each(albums[0]["attributes"]["albums"]["items"], function(album) { %>
+           <tr>
+             <td><%%= album['name'] %></td>
+             <td><img src="<%%= album['images'][0]['url']%>" alt="test" /></td>
+             <td><%%= album['id']%></td>
+           </tr>
+
+         <%% }); %>
+       </tbody>
+     </table>
+  </script>
+
 </head>
 <body>
 
