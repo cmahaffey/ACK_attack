@@ -1,1 +1,15 @@
  @import "materialize";
+
+
+
+
+
+ html {
+   font-family: futura;
+     @extend .lime, .darken-1;
+ }
+
+body{
+
+  text-align: center;
+}
