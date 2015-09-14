@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users'  => 'users#create'
   get '/log_in'  => 'users#log_in'
+  get '/results' => 'welcome#results'
   get '/users/profile' => 'users#profile', as: :user_profile
 
 post '/sessions' => 'sessions#create'

@@ -1,23 +1,12 @@
-console.log('scripts')
- $( document ).ready(function() {
-document.getElementById('search-form').addEventListener('submit', function (e) {
-         e.preventDefault();
-         search = document.getElementById('query').value;
-         $.ajaxSetup({
-           headers:{
-             "accept": "application/json"
-           }
-         })
+search = document.getElementById('welcomequery').value;
+  $.ajaxSetup({
+        headers:{
+            "accept": "application/json"
+        }
+      })
 
-var year;
-if(year == 'undefined'){
-  url = 'http://www.omdbapi.com/?t='+search+'&y='+year+'&plot=short&r=json'
- }else{
-   url = 'http://www.omdbapi.com/?t='+search+'&y=&plot=short&r=json'
- }
-
-var Movie = Backbone.Collection.extend({
-  url:url
+  var Movie = Backbone.Collection.extend({
+    url: 'http://www.omdbapi.com/?t='+search+'&y=&plot=short&r=json'
   });
 
    var MovieList = Backbone.View.extend({
@@ -39,14 +28,5 @@ console.log(movies.models)
    });
 
 
-function renderMovies(){}
-
-
 var movieList = new MovieList();
 movieList.render();
-
-}, false);
-
-
-
-});

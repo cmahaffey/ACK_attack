@@ -12,6 +12,7 @@ console.log('spotify scripts')
         });
   var Album = Backbone.Collection.extend({
     url: 'https://api.spotify.com/v1/search?q='+search+'&type=album'
+       
   });
 
    var AlbumList = Backbone.View.extend({
