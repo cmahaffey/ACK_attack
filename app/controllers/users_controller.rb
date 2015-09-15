@@ -3,7 +3,7 @@ include SessionsHelper
 
 
   def index
-
+  @users = User.all
   end
 
   def log_in
