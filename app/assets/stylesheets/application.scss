@@ -1,15 +1,25 @@
  @import "materialize";
+ @import url(https://fonts.googleapis.com/css?family=Julius+Sans+One);
 
 
+$header-font: 'Julius Sans One', sans-serif;
 
 
-
- html {
-   font-family: futura;
-     @extend .lime, .darken-1;
- }
+html {
+ font-family: futura;
+   @extend .lime, .darken-1;
+   background-image: url("./Black-Vinyl-Wallpapers.jpg");
+   opacity: 90%;
+   background-size: cover;
+}
 
 body{
-
   text-align: center;
+}
+
+.header{
+  margin-top: 50%;
+  font-family: $header-font;
+  font-size:4.5em;
+  color: rgb(241, 244, 247);
 }

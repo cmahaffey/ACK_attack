@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="shortcut icon" href="./assets/images/musicnote.ico" />
+  <link rel="icon" type="image/ico" href="/app/assets/images/musicnote.ico" />
   <title>AckAttack</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -38,9 +38,10 @@
   </script>
 
 </head>
+
 <body>
-
-<%= yield %>
-
+  <div class = "container">
+    <%= yield %>
+  </div>
 </body>
 </html>
