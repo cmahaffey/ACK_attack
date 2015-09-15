@@ -11,8 +11,19 @@ include SessionsHelper
   end
 
   def profile
-    #authenticate!
+    authenticate!
     @user = current_user
+  end
+
+  def edit
+    authenticate!
+    @user = User.find(params[:id])
+  end
+
+  def update
+    user = User.find(params[:id])
+    user.update(user)
+    redirect_to user_profile_path
   end
 
 
