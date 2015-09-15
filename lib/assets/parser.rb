@@ -1,52 +1,64 @@
 require 'json'
 require 'iconv'
-require 'byebug'
 file_raw = File.read('./soundtracks.list')
 
 ic = Iconv.new('UTF-8//IGNORE', 'UTF-8')
 file = ic.iconv(file_raw)
-
+counter = 0
 if file
-  data = file.split(/\n\n/).map do |film|
-    if film && found = film.scan( /# .+/ )
-      line = found[0]
-      if line
-        # unless line.scan( /\{(.*?)\}/ )[0]
-          data={
-            #i=some number to stand in for movie_id
-            title: line.scan( /# "(.*?)"/ )[0]
-                    line.scan( /# "(.*?)"/ )[0]
-                   elsif line.scan( /# (.*?)/ )[0]
-                    line.scan( /# (.*?)/ )[0]#=  [""]
-                   end,
-            year: line.scan( /\((.*?)\)/ )[0],
+  data = []
+    a=[]
+  file.split(/\n\n/).each do |film|
 
-            # artist: line.scan( /{(.*?)}/ )[0],
-            songs: film.scan( /- "(.*?)"/ ),
-            artists: film.scan( /Performed by '(.*?)'/ )
+    if counter <= 500
+      if film && found = film.scan( /# .+/ )
+        line = found[0]
+        if line
 
-          }
+          if line.scan( /\{(.*?)\}/).empty?#filters by tv series
+            soundtrack_info = []
+            artists = film.scan( /Performed by '(.*?)'/ )
+            songs = film.scan( /- "(.*?)"/ )
 
 
-          data = {
+            index = 0
+            songs.each do |song|
+              unless artists[index]==nil
+                artists[index]=artists[index][0].gsub("\"","")
+              end
+              soundtrack_info.push({
+                artist: artists[index] || nil,
+                song: song[0].gsub("\"","") || nil,
+                # movie_id: counter
+                })
+                index +=1
+            end
 
 
-          }
+            data.push({
+              title: line.scan( /# "(.*?)"/ )[0][0].gsub("\"",""),
+              year: line.scan( /\((.*?)\)/ )[0][0].gsub("\"",""),
+              # artist: line.scan( /{(.*?)}/ )[0],
+              # artist: film.scan( /Performed by '(.*?)'/ ),
+              # songs: film.scan( /- "(.*?)"/ )
+              song_info: soundtrack_info
+            })
 
-        # end
+            counter += 1
+          end #if end
+        end
       end
-    end
+    else
+      break
+    end # end of counter
   end
-  data.uniq!
 end
-  data.shift
+puts data.length
+# data.each do |datum|
+#   m=Movie.create(name: datum[:title], year:  datum[:year])
+#   Song.create(name: datum[:song_info][:song], artist: datum[:song_info][:artist] , movie_id:m.id)
+# end
 
-File.write('imdb_data.js', data.to_json)
 
-#rails g migration createMovies
-# bin/rake db:create_migration NAME=create_movies
-# bin/rake db:create_migration NAME=create_songs
 
-Movie.create({title: line.scan, year: line.scan})
-
-Song.create({artist: film.scan, title: film.scan})
+File.write('data.json', data.to_json)

@@ -12,9 +12,15 @@ Rails.application.routes.draw do
   get '/results' => 'welcome#results'
   get '/users/profile' => 'users#profile', as: :user_profile
 
-post '/sessions' => 'sessions#create'
-delete '/sessions' => 'sessions#destroy', as: :log_out
+  post '/sessions' => 'sessions#create'
+  delete '/sessions' => 'sessions#destroy', as: :log_out
 
+  post '/favorites' => 'favorites#create'
+  delete '/favorites' => 'favorties#destroy'
+
+  get '/songs' => 'songs#index'
+
+  get '/movies' => 'movies#index'
 
 
   # Example of regular route:
