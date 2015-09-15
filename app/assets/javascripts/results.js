@@ -1,4 +1,4 @@
-search = document.getElementById('welcomequery').val();
+search = document.getElementById('welcomequery').value;
   $.ajaxSetup({
         headers:{
             "accept": "application/json"
