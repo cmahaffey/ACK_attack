@@ -1,0 +1,13 @@
+
+
+<div class="row">
+<form class="six columns" action="/users/<%=@users.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="user[username]" placeholder="<%=@users.username%>">
+  <input type="text" name="user[email]" placeholder="<%=@users.email%>">
+  <input type="text" name="user[pic_url]" placeholder="<%=@users.pic_url%>">
+  <input type="text" name="user[bio]" placeholder="<%=@users.bio%>"
+  <input class="submit" type="submit" value="Update Party">
+</form>
+
+</div>
