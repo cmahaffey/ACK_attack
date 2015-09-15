@@ -1,0 +1,26 @@
+<h1>Welcome to the Soundtrak community</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <td>
+        UserName
+      </td>
+      <td>
+        Biography
+      </td>
+    </tr>
+  </thead>
+<%@users.each do |user| %>
+
+  <tr>
+    <td>
+      <%=user.username%>
+    </td>
+    <td>
+      $<%=user.bio%>
+    </td>
+  </tr>
+</table>
+  <%end%>

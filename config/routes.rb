@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   get '/results' => 'welcome#results'
-
+  get '/about' =>   'welcome#about'
   get '/users' => 'users#index'
   get '/signup' => 'users#new'
   post '/users'  => 'users#create'
@@ -13,7 +13,8 @@ Rails.application.routes.draw do
 
   get '/users/profile' => 'users#profile', as: :user_profile
 
-  get 'users/edit' => 'users#edit'
+  get 'users/edit' =>'users#edit'
+
 
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#destroy', as: :log_out
