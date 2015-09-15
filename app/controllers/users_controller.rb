@@ -25,9 +25,6 @@ include SessionsHelper
     redirect_to '/log_in'
   end
 
-  def 
-
-  end
 
 
 

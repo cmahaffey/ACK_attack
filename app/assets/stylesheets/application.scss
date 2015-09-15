@@ -1,25 +1,36 @@
  @import "materialize";
  @import url(https://fonts.googleapis.com/css?family=Julius+Sans+One);
-
+ @import url(https://fonts.googleapis.com/css?family=Yellowtail);
+ @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300);
 
 $header-font: 'Julius Sans One', sans-serif;
-
+$sub-head-font: 'Yellowtail', cursive;
+$main-font: 'Josefin Sans', sans-serif;
 
 html {
  font-family: futura;
    @extend .lime, .darken-1;
-   background-image: url("./Black-Vinyl-Wallpapers.jpg");
-   opacity: 90%;
+   background-image: url("./Black-Vinyl-Wallpapers.png");
    background-size: cover;
 }
 
 body{
-  text-align: center;
+  font-family: $main-font;
 }
 
 .header{
-  margin-top: 50%;
+  margin-top: 48%;
   font-family: $header-font;
-  font-size:4.5em;
+  font-size: 4.5em;
   color: rgb(241, 244, 247);
+  display: inline-block;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+#header-image{
+  height: 60px;
+  width: 60px;
+  background-image: url("./header-image.gif");
+  background-size: contain;
 }

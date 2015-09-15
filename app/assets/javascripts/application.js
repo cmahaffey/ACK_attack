@@ -17,3 +17,4 @@
 //= require_tree .
 //= require_omdb
 //= require_spotify
+//= require_welcome
