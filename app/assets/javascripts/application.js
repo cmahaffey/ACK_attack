@@ -12,9 +12,6 @@
 //
 
 //= require jquery
-
-//= require_underscore
-//= require_backbone
 //= require_tree .
 //= require materialize-sprockets
 //= require jquery_ujs
