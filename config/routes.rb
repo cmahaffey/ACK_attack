@@ -18,9 +18,8 @@ Rails.application.routes.draw do
 
  get '/users/:id/edit' => 'users#edit'
  put '/users/:id' => 'users#update', as: :user_update
+
  delete 'users/:id' => 'users#destroy'
-  #get 'users/edit' =>'users#edit'
-  #put 'users/edit'  => 'users#update'
 
   #session Routes
   post '/sessions' => 'sessions#create'
@@ -35,7 +34,8 @@ Rails.application.routes.draw do
 
   #movie Routes
   get '/movies' => 'movies#index'
-  get '/json' => 'movies#show'
+  # get '/json' => 'movies#show'
+  post '/json' => 'movies#show'
 
 
   # Example of regular route:

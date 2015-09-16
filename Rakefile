@@ -69,6 +69,7 @@ namespace :db do
     data.each do |datum|
       m=Movie.create({
           name: datum[:title],
+          search: datum[:title],
           year:  datum[:year]
         })
       datum[:song_info].each do |song|
