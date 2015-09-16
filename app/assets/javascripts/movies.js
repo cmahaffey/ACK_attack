@@ -14,8 +14,6 @@ $( document ).ready(function() {
        });
 
  var Album = Backbone.Collection.extend({
-   url: 
+   url:
 
  });
-
-}
