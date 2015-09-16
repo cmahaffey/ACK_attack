@@ -1,11 +1,14 @@
 
 <h2>Update your information, <%=@user.username%></h2>
 
-<form class="col s12" action="/users/<%=@user.id%>" method="post">
-  <input type="hidden" name="_method" value="put">
-  <input type="text" name="userparams[username]" placeholder="<%=@user.username%>">
-  <input type="text" name="userparams[email]" placeholder="<%=@user.email%>">
-  <input type="text" name="userparams[pic_url]" placeholder="<%=@user.pic_url%>">
-  <input type="text" name="userparams[bio]" placeholder="<%=@user.bio%>">
-  <input class="submit" type="submit" value="Update User Information">
-</form>
+<%= form_for(@user, url: user_update_path, method: :put) do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :bio %>
+  <%= f.text_field :bio %>
+  <%= f.label :pic_url%>
+  <%= f.text_field :pic_url %>
+  <%=  f.submit %>
+<% end %>
