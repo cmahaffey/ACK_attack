@@ -1,7 +1,7 @@
 
 console.log('spotify scripts')
  $( document ).ready(function() {
-   document.getElementById('search-form').addEventListener('submit', function (e) {
+   document.getElementById('').addEventListener('submit', function (e) {
          e.preventDefault();
          search = document.getElementById('query').value + " motion picture soundtrack";
 

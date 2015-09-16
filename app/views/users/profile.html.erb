@@ -17,16 +17,17 @@
 <div class="container">
     <h3>Search for a Movie</h3>
     <!-- <p>Type a Movie name and click on "Search".</p> -->
-    <form id="search-form">
-        <input type="text" id="query" value="" class="form-control" placeholder="Type Your Movie Here"/>
+    <form id="search-form" action="/json">
+        <input type="text" id="query" name="title" class="form-control" placeholder="Type Your Movie Here"/>
         <input type="submit" id="search" class="btn btn-primary" value="Search" />
     </form>
+    <div class="movie-el">
+
+    </div>
     <div id="results"></div>
 
     </div>
-   <div class="movie-el">
 
-   </div>
    <div class="spotify-el">
 
    </div>
