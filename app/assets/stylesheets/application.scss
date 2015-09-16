@@ -9,11 +9,13 @@ $header-font: 'Julius Sans One', sans-serif;
 $sub-head-font: 'Yellowtail', cursive;
 $main-font: 'Josefin Sans', sans-serif;
 $header-color: rgb(241, 244, 247);
+$sub-head-text-color: #e57373;
+$primary-text-color: #212121;
+$background-color: #fafafa;
 
 
-html {
- font-family: futura;
-   @extend .red, .accent-2;
+html{
+  background-color: $background-color;
 }
 
 body.homepage{
@@ -25,12 +27,22 @@ body.homepage{
 
 body{
   font-family: $main-font;
-  font-size: 18px;
+  font-size: 20px;
+  color: $primary-text-color;
 }
 
 h2{
   font-family: $sub-head-font;
-    font-size: 2em;
+  color: $sub-head-text-color;
+  font-size: 2em;
+}
+
+li {
+  color: $sub-head-text-color;
+}
+
+a{
+  color: $sub-head-text-color;
 }
 
 #tagline{
