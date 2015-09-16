@@ -4,4 +4,8 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
 
+  def create
+    @movie=Movie.find('Frozen')||nil
+  end
+
 end
