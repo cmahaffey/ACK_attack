@@ -1,3 +1,4 @@
+require "json"
 class MoviesController < ApplicationController
 
   def index
@@ -5,8 +6,9 @@ class MoviesController < ApplicationController
 
   end
 
-  def create
-    @movie=Movie.find('Frozen')||nil
+  def show
+    @movie=Movie.where("name= 'A Escrava Isaura'")
+
   end
 
 end
