@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/results' => 'welcome#results'
   get '/about' =>   'welcome#about'
+  get '/search' => 'welcome#search'
 
   get '/users' => 'users#index'
   get '/signup' => 'users#new'
@@ -18,8 +19,7 @@ Rails.application.routes.draw do
  get '/users/:id/edit' => 'users#edit'
  put '/users/:id' => 'users#update', as: :user_update
 
-  #get 'users/edit' =>'users#edit'
-  #put 'users/edit'  => 'users#update'
+ delete 'users/:id' => 'users#destroy'
 
   #session Routes
   post '/sessions' => 'sessions#create'

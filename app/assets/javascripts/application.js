@@ -13,8 +13,9 @@
 //= require jquery
 //= require materialize-sprockets
 //= require jquery_ujs
-//= require turbolinks
+//= require underscore
+//= require backbone
+//= require welcome
+//= require_tree .
 //= require_omdb
 //= require_spotify
-//= require_welcome
-//= require_tree .

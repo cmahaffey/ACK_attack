@@ -1,40 +1,46 @@
-
-console.log('spotify scripts')
+console.log('scripts')
  $( document ).ready(function() {
-   document.getElementById('').addEventListener('submit', function (e) {
+
+   document.getElementById('search-form').addEventListener('submit', function (e) {
          e.preventDefault();
-         search = document.getElementById('query').value + " motion picture soundtrack";
+        song = ['in da club', 'fight song']
+        artist = ['50 cent', 'rachel platten']
 
-    $.ajaxSetup({
-          headers:{
-            "accept": "application/json"
-                 }
-        });
-  var Album = Backbone.Collection.extend({
-    url: 'https://api.spotify.com/v1/search?q='+search+'&type=album'
-
+  $.ajaxSetup({
+     headers:{
+      "accept": "application/json"
+           }
   });
+  // var Trackmodel = Backbone.Model.extend({
+  //   url: 'https://api.spotify.com/v1/search?q=track:'+song+'%20artist:'+artist+'&type=track'
+  //
+  // })
 
-   var AlbumList = Backbone.View.extend({
+
+for(i=0; i<song.length; i++){
+  var Track = Backbone.Collection.extend({
+    url: 'https://api.spotify.com/v1/search?q=track:'+song[i]+'%20artist:'+artist[i]+'&type=track&limit=1',
+  });
+   var TrackList = Backbone.View.extend({
      el: '.spotify-el',
      render: function(){
        var that = this;
-       var album = new Album()
-         album.fetch({
-           success: function(album){
-            var template = _.template($('#albumListtempplate').html(), {albums: album.models}); //cant get this to render on the page. If I put in album instead of all allalbums it just puts{objectobject}on the screen] trying to figure it out}
-           var albums = album.models
-           var test = albums[0]
-           console.log(test)
-          that.$el.html(template)
+       var track = new Track()
+         track.fetch({
+           success: function(track){
+           var template = _.template($('#albumListtempplate').html(), {tracks: track.models}); //cant get this to render on the page. If I put in album instead of all allalbums it just puts{objectobject}on the screen] trying to figure it out}
+           var trackm = track.models
+           console.log(trackm)
+          that.$el.append(template)
+
            }
        })
      }
    });
 
-
-var albumList = new AlbumList();
-albumList.render();
-
+var trackList = new TrackList();
+trackList.render();
+}
 }, false);
+
 });

@@ -14,8 +14,13 @@ include SessionsHelper
     authenticate!
     @user = current_user
   end
+
   def new
    @user = User.new
+  end
+
+  def search
+
   end
 
   def create
@@ -34,9 +39,21 @@ include SessionsHelper
     redirect_to '/users/profile'
   end
 
+  def destroy
+    user = User.find(params[:id])
+    user.delete()
+    redirect_to '/'
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :password, :email, :pic_url, :bio, :token)
   end
+
+
+
+
+
+
 
 end
