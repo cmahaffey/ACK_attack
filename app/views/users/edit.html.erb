@@ -1,13 +1,14 @@
 
+<h2>Update your information, <%=@user.username%></h2>
 
-<div class="row">
-<form class="six columns" action="/users/<%=@users.id%>" method="post">
-  <input type="hidden" name="_method" value="put">
-  <input type="text" name="user[username]" placeholder="<%=@users.username%>">
-  <input type="text" name="user[email]" placeholder="<%=@users.email%>">
-  <input type="text" name="user[pic_url]" placeholder="<%=@users.pic_url%>">
-  <input type="text" name="user[bio]" placeholder="<%=@users.bio%>"
-  <input class="submit" type="submit" value="Update Party">
-</form>
-
-</div>
+<%= form_for(@user, url: user_update_path, method: :put) do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :bio %>
+  <%= f.text_field :bio %>
+  <%= f.label :pic_url%>
+  <%= f.text_field :pic_url %>
+  <%=  f.submit %>
+<% end %>

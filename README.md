@@ -4,7 +4,7 @@
 
 
 ## Ideas
-TBD is a web based app where the users can input the title of any movie and the app will list all the songs associated with that movie.  
+SoundTrak is a web based app where the users can input the title of any movie and the app will list all the songs associated with that movie.  
 
 
 ## User Stories

@@ -14,19 +14,6 @@ include SessionsHelper
     authenticate!
     @user = current_user
   end
-
-  def edit
-    authenticate!
-    @user = User.find(params[:id])
-  end
-
-  def update
-    user = User.find(params[:id])
-    user.update(user)
-    redirect_to user_profile_path
-  end
-
-
   def new
    @user = User.new
   end
@@ -36,12 +23,20 @@ include SessionsHelper
     redirect_to '/log_in'
   end
 
+  def edit
+    authenticate!
+    @user = User.find(params[:id])
+  end
 
-
+  def update
+    user = User.find(params[:id])
+    user.update(user_params)
+    redirect_to '/users/profile'
+  end
 
   private
   def user_params
-    params.require(:user).permit(:username, :password, :email, :pic_url)
+    params.require(:user).permit(:username, :password, :email, :pic_url, :bio, :token)
   end
 
 end
