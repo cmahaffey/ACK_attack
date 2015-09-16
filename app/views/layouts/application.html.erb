@@ -2,20 +2,20 @@
 <html>
 <head>
   <link rel="icon" type="image/ico" href="/app/assets/images/musicnote.ico" />
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>AckAttack</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>soundtrak</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
-
-
   <script type="text/template", id='movieListtempplate'>
     <%% _.each(movies, function(movie) { %>
       <h1>  Title: <%%= movie.get('Title') %> </h1>
         Actors:  <%%= movie.get('Actors') %>
       <p>  Plot: <%%= movie.get('Plot') %> <p>
+
         <img src="<%%= movie.get('Poster')%>" alt="Poster Not Available" />
      <%% }); %>
+
   </script>
 
   <script type="text/template", id='albumListtempplate'>
@@ -44,26 +44,7 @@
 <body class="<%= @home_page ? 'homepage' : ''%>">
 
   <div class = "container">
-
-  <div class="row">
-    <div class = "col s2">
-      <a class='dropdown-button btn red accent-2' href='#' data-activates='nav-options'>Menu</a>
-        <ul id='nav-options' class='dropdown-content'>
-          <li><a href="/" class="red-text text-accent-2">Home</a></li>
-          <li class="divider"></li>
-          <li><a href="/about" class="red-text text-accent-2">About</a></li>
-          <li class="divider"></li>
-          <li><a href="/log_in" class="red-text text-accent-2">Log In</a></li>
-          <li class="divider"></li>
-          <li><a href="/signup" class="red-text text-accent-2">Sign Up</a></li>
-          <li class="divider"></li>
-          <li><a href="/users" class="red-text text-accent-2">Community</a></li>
-        </ul>
-    </div>
-  </div>
-
     <%= yield %>
-
   </div>
 </body>
 </html>

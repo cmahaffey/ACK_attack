@@ -1,11 +1,10 @@
+<%= render "navbar" %>
 <input type="hidden" id="api-token" value='<%=@user.token%>'>
 
-<h2>Welcome Back, <%=@user.username%></h2>
-<img src= <%=@user.pic_url%>> </img>
-  <h3>Here are the Movies and songs that you love:</h3>
-<%= button_to 'Log Out', log_out_path, method: :delete %><a href="/users/<%=@user.id%>/edit">Edit Profile</a>
 
+<div id="header-line"> <img class="profile-image prof-head" src= "<%=@user.pic_url%>"> </img><h2 class= "prof-head">Welcome Back, <%=@user.username%></h2> </div>
 
+<<<<<<< HEAD
 <div class="container">
     <h3>Search for a Movie</h3>
     <!-- <p>Type a Movie name and click on "Search".</p> -->
@@ -14,14 +13,38 @@
         <input type="submit" id="search" class="btn btn-primary" value="Search" />
     </form>
     <div class="movie-el">
+=======
+<div class="row">
+>>>>>>> 72b7b273ef189846ebde9a88cb4dd6ef000ebe8d
+
+      <div class="col s2">
+        <h5>Favorites</h5>
+      </div>
+
+      <div class="col s10">
+        <div class="container">
+            <h3>Search for a Movie</h3>
+            <!-- <p>Type a Movie name and click on "Search".</p> -->
+            <form id="search-form" action="/json">
+                <input type="text" id="query" name="title" class="form-control" placeholder="Type Your Movie Here"/>
+                <input type="submit" id="search" class="btn btn-primary" value="Search" />
+            </form>
+            <div class="movie-el">
+
+            </div>
+            <div id="results"></div>
+
+            </div>
+
+           <div class="spotify-el">
+           </div>
+
+      </div>
 
     </div>
-    <div id="results"></div>
 
-    </div>
 
-   <div class="spotify-el">
-
+<<<<<<< HEAD
    </div>
    <%@movie.each do |mov|%>
    <div class=".omdb-data">
@@ -43,3 +66,8 @@
 
 
    <%end%>
+=======
+
+
+<%= button_to 'Log Out', log_out_path, method: :delete %><a href="/users/<%=@user.id%>/edit">Edit Profile</a>
+>>>>>>> 72b7b273ef189846ebde9a88cb4dd6ef000ebe8d

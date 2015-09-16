@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <form class="" action="/movies" method="get">
-      <input type="text" name="search[movie]" value="">
-    </form>
 
+<%= render "navbar" %>
 
+<form class="" action="/movies" method="get">
+  <input type="text" name="search[movie]" value="">
+</form>
 
     <table>
       <thead>
@@ -34,6 +28,3 @@
       </tr>
     <%end%>
     </table>
-
-  </body>
-</html>
