@@ -1,10 +1,10 @@
-console.log('scripts')
+console.log('scripts_omdb')
 
 
  $( document ).init(function() {
    movieName = $('.title').text()
    movieYear = $('.year').text()
-   songName = $('')
+
 
      //movieData = "test"
    console.log(movieName)

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/log_in'  => 'users#log_in'
 
   get '/users/profile' => 'users#profile', as: :user_profile
+
   post '/users/profile' => 'users#profile'
 
  get '/users/:id/edit' => 'users#edit'
@@ -35,6 +36,7 @@ Rails.application.routes.draw do
 
   #movie Routes
   get '/movies' => 'movies#index'
+  get 'movies/api' => 'movies#api'
   # get '/json' => 'movies#show'
   post '/json' => 'movies#show'
 

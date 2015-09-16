@@ -63,3 +63,29 @@ h2{
   width: 100%;
   height: auto;
 }
+
+#nav-logo{
+  font-family: $sub-head-font;
+  font-size: 2em;
+  margin-left: 2%;
+}
+
+.dropdown-button{
+  position: absolute;
+  left: 85%;
+}
+
+.profile-image{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid $sub-head-text-color;
+}
+
+.prof-head{
+  display: inline-block;
+  font-size: 4em;
+}
+#header-line{
+  text-align: center;
+}

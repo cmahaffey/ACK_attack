@@ -7,12 +7,22 @@ class MoviesController < ApplicationController
      puts @movie
   end
 
+  def api
+    puts 'x'*30
+    puts movie_params||"haha, you failed"
+    #{name => :title}
+    puts 'x'*30
+    render json: Movie.where(movie_params)
+  end
+
   def show
     puts 'x'*30
     puts movie_params||"haha, you failed"
     #{name => :title}
     puts 'x'*30
     @movie=Movie.where(movie_params)
+    #
+    # redirect_to '/users/profile'
 
   end
 
