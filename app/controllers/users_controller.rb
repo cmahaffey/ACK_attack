@@ -22,8 +22,8 @@ include SessionsHelper
 
   def update
     user = User.find(params[:id])
-    user.update(user)
-    redirect_to user_profile_path
+    user.update(userparams)
+    redirect_to '/profile'
   end
 
 

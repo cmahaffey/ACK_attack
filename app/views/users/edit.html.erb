@@ -1,13 +1,11 @@
 
+<h2>Update your information, <%=@user.username%></h2>
 
-<div class="row">
-<form class="six columns" action="/users/<%=@users.id%>" method="post">
+<form class="col s12" action="/users/<%=@user.id%>" method="post">
   <input type="hidden" name="_method" value="put">
-  <input type="text" name="user[username]" placeholder="<%=@users.username%>">
-  <input type="text" name="user[email]" placeholder="<%=@users.email%>">
-  <input type="text" name="user[pic_url]" placeholder="<%=@users.pic_url%>">
-  <input type="text" name="user[bio]" placeholder="<%=@users.bio%>"
-  <input class="submit" type="submit" value="Update Party">
+  <input type="text" name="userparams[username]" placeholder="<%=@user.username%>">
+  <input type="text" name="userparams[email]" placeholder="<%=@user.email%>">
+  <input type="text" name="userparams[pic_url]" placeholder="<%=@user.pic_url%>">
+  <input type="text" name="userparams[bio]" placeholder="<%=@user.bio%>">
+  <input class="submit" type="submit" value="Update User Information">
 </form>
-
-</div>
