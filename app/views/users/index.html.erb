@@ -1,6 +1,7 @@
 <%= render "navbar" %>
 
-<h1>Welcome to the Soundtrak community</h1>
+<h1 class="community">Welcome to the Soundtrak Community</h1>
+<h2 class="community">Check out some of our other users!</h2>
 
 <div class="row">
   <% @users.each_with_index do |user, index| %>
@@ -11,7 +12,7 @@
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4"><%= user.username %><i class="material-icons right">more_vert</i></span>
-          <p><%= user.location %></p>
+          <h6><%= user.location %></h6>
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">Bio<i class="material-icons right">close</i></span>

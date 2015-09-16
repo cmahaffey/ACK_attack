@@ -47,7 +47,7 @@ include SessionsHelper
 
   private
   def user_params
-    params.require(:user).permit(:username, :password, :email, :pic_url, :bio, :token)
+    params.require(:user).permit(:username, :password, :email, :pic_url, :bio, :token, :location)
   end
 
 
