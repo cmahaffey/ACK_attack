@@ -34,7 +34,8 @@ Rails.application.routes.draw do
 
   #movie Routes
   get '/movies' => 'movies#index'
-  get '/json' => 'movies#show'
+  # get '/json' => 'movies#show'
+  post '/json' => 'movies#show'
 
 
   # Example of regular route:
