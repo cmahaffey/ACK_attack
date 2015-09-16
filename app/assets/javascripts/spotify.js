@@ -3,19 +3,14 @@ console.log('scripts')
 
    document.getElementById('search-form').addEventListener('submit', function (e) {
          e.preventDefault();
-        song = ['in da club', 'fight song']
-        artist = ['50 cent', 'rachel platten']
+        song = ['in da club', 'fight song', 'in da club']
+        artist = ['50 cent', 'rachel platten', '50 cent']
 
   $.ajaxSetup({
      headers:{
       "accept": "application/json"
            }
   });
-  // var Trackmodel = Backbone.Model.extend({
-  //   url: 'https://api.spotify.com/v1/search?q=track:'+song+'%20artist:'+artist+'&type=track'
-  //
-  // })
-
 
 for(i=0; i<song.length; i++){
   var Track = Backbone.Collection.extend({
@@ -32,7 +27,6 @@ for(i=0; i<song.length; i++){
            var trackm = track.models
            console.log(trackm)
           that.$el.append(template)
-
            }
        })
      }

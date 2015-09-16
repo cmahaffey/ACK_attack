@@ -4,7 +4,7 @@ console.log('scripts')
  $( document ).ready(function() {
    movieName = $('.title').text()
    movieYear = $('.year').text()
-   songName = $('')
+   
 
      //movieData = "test"
    console.log(movieName)
