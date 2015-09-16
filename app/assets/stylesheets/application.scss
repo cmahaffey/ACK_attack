@@ -37,14 +37,6 @@ h2{
   font-size: 2em;
 }
 
-li {
-  color: $sub-head-text-color;
-}
-
-a{
-  color: $sub-head-text-color;
-}
-
 #tagline{
   margin-top: -3%;
   margin-left: 40%;
@@ -65,4 +57,9 @@ a{
   width: 60px;
   background-image: url("./header-image.gif");
   background-size: contain;
+}
+
+.activator{
+  width: 100%;
+  height: auto;
 }
