@@ -9,13 +9,17 @@
   <%= csrf_meta_tags %>
   <script type="text/template", id='movieListtempplate'>
     <%% _.each(movies, function(movie) { %>
-      <h1>  Title: <%%= movie.get('Title') %> </h1>
-        Actors:  <%%= movie.get('Actors') %>
-      <p>  Plot: <%%= movie.get('Plot') %> <p>
-
-        <img src="<%%= movie.get('Poster')%>" alt="Poster Not Available" />
-     <%% }); %>
-
+    <div class="row">
+      <div class="col s6">
+        <img id="film-poster" src="<%%= movie.get('Poster')%>" alt="We need an API key to get the poster" />
+      </div>
+      <div class="col s6">
+        <h3><%%= movie.get('Title') %></h3>
+            <%%= movie.get('Actors') %>
+        <p><%%= movie.get('Plot') %><p>
+      </div>
+    </div>
+    <%% }); %>
   </script>
 
   <script type="text/template", id='albumListtempplate'>
