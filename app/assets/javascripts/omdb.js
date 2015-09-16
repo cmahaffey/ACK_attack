@@ -2,11 +2,13 @@ console.log('scripts')
 
 
  $( document ).ready(function() {
-   movieData = $('.title').text()
-
+   movieName = $('.title').text()
+   movieYear = $('.year').text()
+   songName = $('')
 
      //movieData = "test"
-   console.log(movieData)
+   console.log(movieName)
+   console.log(movieYear)
 document.getElementById('search-form').addEventListener('submit', function (e) {
          e.preventDefault();
          search = document.getElementById('query').value;

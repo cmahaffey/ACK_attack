@@ -8,6 +8,7 @@ class MoviesController < ApplicationController
   end
 
   def show
+    
     @movie=Movie.where("name= 'A Escrava Isaura'")
 
   end
