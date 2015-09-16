@@ -38,10 +38,6 @@ console.log(movies.models)
      }
    });
 
-
-function renderMovies(){}
-
-
 var movieList = new MovieList();
 movieList.render();
 

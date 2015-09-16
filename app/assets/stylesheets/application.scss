@@ -1,3 +1,5 @@
+// require welcome.scss
+
  @import "materialize";
  @import url(https://fonts.googleapis.com/css?family=Julius+Sans+One);
  @import url(https://fonts.googleapis.com/css?family=Yellowtail);
@@ -11,9 +13,14 @@ $header-color: rgb(241, 244, 247);
 
 html {
  font-family: futura;
-   @extend .lime, .darken-1;
-   background-image: url("./Black-Vinyl-Wallpapers.png");
-   background-size: cover;
+   @extend .red, .accent-2;
+}
+
+body.homepage{
+  background-image: url('./Black-Vinyl-Wallpapers.png');
+  height: 800px;
+  width: 100%;
+  background-size: cover;
 }
 
 body{
@@ -23,7 +30,10 @@ body{
 
 h2{
   font-family: $sub-head-font;
-  font-size: 2em;
+    font-size: 2em;
+}
+
+#tagline{
   margin-top: -3%;
   margin-left: 40%;
 }

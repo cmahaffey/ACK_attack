@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  #welcome Routes
   root 'welcome#index'
   get '/results' => 'welcome#results'
   get '/about' =>   'welcome#about'
+
   get '/users' => 'users#index'
   get '/signup' => 'users#new'
   post '/users'  => 'users#create'
@@ -13,16 +15,24 @@ Rails.application.routes.draw do
 
   get '/users/profile' => 'users#profile', as: :user_profile
 
-  get 'users/edit' =>'users#edit'
+ get '/users/:id/edit' => 'users#edit'
+ put '/users/:id' => 'users#update', as: :user_update
 
+  #get 'users/edit' =>'users#edit'
+  #put 'users/edit'  => 'users#update'
+
+  #session Routes
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#destroy', as: :log_out
 
+  #Favorite routes
   post '/favorites' => 'favorites#create'
   delete '/favorites' => 'favorties#destroy'
 
+  #song routes
   get '/songs' => 'songs#index'
 
+  #movie Routes
   get '/movies' => 'movies#index'
 
 
