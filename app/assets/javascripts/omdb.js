@@ -1,10 +1,10 @@
-console.log('scripts')
+console.log('scripts_omdb')
 
 
- $( document ).ready(function() {
+ $( document ).init(function() {
    movieName = $('.title').text()
    movieYear = $('.year').text()
-   
+
 
      //movieData = "test"
    console.log(movieName)
@@ -53,5 +53,5 @@ movieList.render();
 }, false);
 
 
-
+return false
 });

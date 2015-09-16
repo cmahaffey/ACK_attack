@@ -14,7 +14,9 @@ include SessionsHelper
     authenticate!
     @user = current_user
 
-    @movie=Movie.where(movie_params)
+
+    @movie=Movie.where(movie_params)||nil
+
   end
 
 
@@ -54,10 +56,11 @@ include SessionsHelper
     params.require(:user).permit(:username, :password, :email, :pic_url, :bio, :token, :location)
   end
 
-  private
   def movie_params
     # params[:name]="A Escrava Isaura"
     params.permit(:name)
+
+
   end
 
 
