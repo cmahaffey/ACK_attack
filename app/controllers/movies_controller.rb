@@ -8,16 +8,12 @@ class MoviesController < ApplicationController
   end
 
   def show
-<<<<<<< HEAD
     puts 'x'*30
     puts movie_params||"haha, you failed"
+    #{name => :title}
     puts 'x'*30
     @movie=Movie.where(movie_params)
-=======
-    
-    @movie=Movie.where("name= 'A Escrava Isaura'")
 
->>>>>>> f554a8b7b9923bab5d7e2013cb1bb48f447e59cf
   end
 
   private

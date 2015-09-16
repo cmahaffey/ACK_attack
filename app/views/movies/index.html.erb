@@ -31,9 +31,9 @@
           <%=movie.year%>
         </td>
         <td>
-          <%movie.songs.name.each do |song|%>
+          <%movie.songs.each do |song|%>
           <ul>
-            song.name
+            <%=song.name%>
           </ul>
           <%end%>
         </td>

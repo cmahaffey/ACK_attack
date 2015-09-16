@@ -1,7 +1,7 @@
 console.log('scripts')
 
 
- $( document ).ready(function() {
+ $( document ).init(function() {
    movieName = $('.title').text()
    movieYear = $('.year').text()
    songName = $('')
@@ -53,5 +53,5 @@ movieList.render();
 }, false);
 
 
-
+return false
 });
