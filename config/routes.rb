@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get 'users/edit' =>'users#edit'
 
+
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#destroy', as: :log_out
 
