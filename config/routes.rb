@@ -18,8 +18,6 @@ Rails.application.routes.draw do
  get '/users/:id/edit' => 'users#edit'
  put '/users/:id' => 'users#update', as: :user_update
 
-  #get 'users/edit' =>'users#edit'
-  #put 'users/edit'  => 'users#update'
 
   #session Routes
   post '/sessions' => 'sessions#create'

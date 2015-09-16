@@ -5,6 +5,12 @@
     <title></title>
   </head>
   <body>
+    <form class="" action="/movies" method="get">
+      <input type="text" name="search[movie]" value="">
+    </form>
+
+
+
     <table>
       <thead>
         <tr>
@@ -25,7 +31,11 @@
           <%=movie.year%>
         </td>
         <td>
-          <%=movie.songs%>
+          <%movie.songs.name.each do |song|%>
+          <ul>
+            song.name
+          </ul>
+          <%end%>
         </td>
       </tr>
     <%end%>

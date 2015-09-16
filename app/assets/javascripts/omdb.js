@@ -1,9 +1,14 @@
 console.log('scripts')
  $( document ).ready(function() {
+
+  movieData = $('#test').text
+  
+  //movieData = "test"
+  console.log(movieData)
 document.getElementById('search-form').addEventListener('submit', function (e) {
          e.preventDefault();
          search = document.getElementById('query').value;
-         $.ajaxSetup({
+        $.ajaxSetup({
            headers:{
              "accept": "application/json"
            }
