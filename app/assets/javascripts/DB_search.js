@@ -9,16 +9,14 @@ $( document ).ready(function() {
    $.ajaxSetup({
          headers:{
            "accept": "application/json"
-                }
+         });
+  $.ajax({
+    url:'/json'
+  }).done(function(){
+    console.log('this works');
+  })
 
- var Album = Backbone.Collection.extend({
-   url: '/json'
-   callback: function(){
-     var movie_info={
-       name:
-     }
-   }
- });
+
 
  Album.fetch();
 }
