@@ -16,11 +16,9 @@ if file
     a=[]
   file.split(/\n\n/).each do |film|
 
-<<<<<<< HEAD
-    if counter <= 1000
-=======
+
+
      if counter <= 10000
->>>>>>> 3a1c7212fd066881a733e39dcf03e1ac90aa0143
       if film && found = film.scan( /# .+/ )
         line = found[0]
         if line
