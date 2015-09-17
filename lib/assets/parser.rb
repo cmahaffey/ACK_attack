@@ -23,7 +23,9 @@ if file
 
             index = 0
             songs.each do |song|
-              unless artists[index]==nil
+              if artists[index]==nil
+                artists.insert(index, "N/A")
+              else
                 artists[index]=artists[index][0].gsub("\"","")
               end
               soundtrack_info.push({
