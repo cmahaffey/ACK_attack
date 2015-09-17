@@ -21,17 +21,16 @@ $( document ).ready(function() {
 
        }
     }).done(function(data){
-
       console.log(data);
       //console.log(data[0].artist);
-
+//console.log(data[0].id)
       // console.log(data[0]);
       // console.log(data[0].artist);
 
 
-
-      songInfo(data[0].name, data[0].artist)
-
+for(i=0; i<2; i++){
+      songInfo(data[0].name, data[0].artist,data[0].id)
+}
     });
 
 
