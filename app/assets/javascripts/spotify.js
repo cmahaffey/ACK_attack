@@ -24,8 +24,8 @@ console.log('scripts')
            var trackm = track.models
            console.log(song_id)
           that.$el.append(template)
-          var $song_id = $('.song_id')
-          $song_id.text(song_id)
+          var $song_id = $('#song_id')
+          $song_id.val(song_id)
            }
        })
      }

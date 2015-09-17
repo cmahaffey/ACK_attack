@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   #welcome Routes
   root 'welcome#index'
-  get '/results' => 'welcome#results'
   get '/about' =>   'welcome#about'
   get '/search' => 'welcome#search'
 
@@ -30,7 +29,7 @@ Rails.application.routes.draw do
 
   #Favorite routes
   post '/favorites' => 'favorites#create'
-  delete '/favorites' => 'favorties#destroy'
+  delete 'favorites/:id' => 'favorites#destroy'
 
   #song routes
   get '/songs' => 'songs#index'
