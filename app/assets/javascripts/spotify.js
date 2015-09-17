@@ -1,14 +1,13 @@
 console.log('scripts')
 
 
-  function songInfo(song, artist){
+  function songInfo(song, artist, song_id){
 
   $.ajaxSetup({
      headers:{
       "accept": "application/json"
            }
   });
-
 
   var Track = Backbone.Collection.extend({
     url: 'https://api.spotify.com/v1/search?q=track:'+song+'%20artist:'+artist+'&type=track&limit=1',
@@ -22,8 +21,10 @@ console.log('scripts')
            success: function(track){
            var template = _.template($('#albumListtempplate').html(), {tracks: track.models}); //cant get this to render on the page. If I put in album instead of all allalbums it just puts{objectobject}on the screen] trying to figure it out}
            var trackm = track.models
-           console.log(trackm)
+           console.log(song_id)
           that.$el.append(template)
+          var $song_id = $('.song_id')
+          $song_id.text(song_id)
            }
        })
      }

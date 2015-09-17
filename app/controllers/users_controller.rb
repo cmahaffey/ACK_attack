@@ -15,6 +15,7 @@ include SessionsHelper
     @user = current_user
     @movie=Movie.where(movie_params)||nil
     @favorites = Favorite.all.where(user_id: params[:id])
+
   end
 
 
