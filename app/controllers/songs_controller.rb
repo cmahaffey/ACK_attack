@@ -4,12 +4,12 @@ class SongsController < ApplicationController
     @songs = Song.all
   end
 
-  def songsapi
-  #render json:  Movie.joins(:songs)
-  songs = "movies.name='Back to the Future'"
-  render json: Song.joins(:movie).where(songs)
-  #render json: Movie.joins("RIGHT JOIN ON songs.movie_id = movie.id")
-  end
+  # def songsapi
+  # #render json:  Movie.joins(:songs)
+  # songs = "movies.name='Back to the Future'"
+  # render json: Song.joins(:movie).where(songs)
+  # #render json: Movie.joins("RIGHT JOIN ON songs.movie_id = movie.id")
+  # end
 
 end
 
