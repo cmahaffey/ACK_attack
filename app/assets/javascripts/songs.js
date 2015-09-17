@@ -28,8 +28,8 @@ $( document ).ready(function() {
       // console.log(data[0].artist);
 
 
-for(i=0; i<2; i++){
-      songInfo(data[0].name, data[0].artist,data[0].id)
+for(i=0; i<data.length; i++){
+      songInfo(data[i].name, data[i].artist,data[i].id)
 }
     });
 
