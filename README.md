@@ -3,16 +3,29 @@
 <title>Hello Strapdown</title>
 
 <xmp theme="united" style="display:none;">
-# Markdown text goes in here
+# soundtrak
+#### A web based music search app that allows users to:
 
-## Ideas
-soundtrak is a web based app where the users can input the title of any movie and the app will list all the songs associated with that movie.  
+ * Input a movie title into our search engine and return a list of songs from that movie.
+ * View information about the movie via the OMDB API.
+ * Listen to the tracks from the movie on the page using the Spotify API.
+ * Create an account and log in to access the "favorites" feature.  By "favoriting" a song, users are able to store a list of their favorite songs that displays on their profile every time they log in.
+ * Edit and update their profile, including add their own profile photo.
+ * Allows users the ability to
 
-## User Stories
-- As a user I would like to view music in movies so that I can keep up to date on what is happening in the world of movies and music.
-- As a user I would like to leave comments so that other users can see my opinions
-- As a user I would like to keep track of my favorite music in movies so that I can remember the songs and movies that I love
-- As a user I would like to have a profile page that shows only my favorite movies and music so that I can revisit them again and again.
+
+### Technologies used in the process :+1::
+
+ * Ruby on Rails
+ * POSTGRESQL
+ * Javascript
+ * jQuery
+ * Backbone.js
+ * SCSS
+ * Materialize
+ * Heroku
+ * Git
+
 
 ## ERD
 
