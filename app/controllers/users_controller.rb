@@ -13,7 +13,8 @@ include SessionsHelper
   def profile
     authenticate!
     @user = current_user
-    @movie=Movie.where(movie_params)||nil
+    @movie = Movie.where(movie_params)||nil
+    @song = Song.all
     @favorites = Favorite.where("user_id = ?", @current_user.id)
   end
 

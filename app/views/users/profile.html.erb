@@ -15,36 +15,26 @@
   </script>
 
   <script type="text/template", id='albumListtempplate'>
-     <table class="table striped">
-       <thead>
-         <tr>
-           <th>Songs</th>
-         </tr>
-     </thead>
+    <ul>
      <%% track = tracks[0]["attributes"]["tracks"]["items"][0]%>
-         <tr>
             <%%test = "https://embed.spotify.com/?uri=spotify:track:"+track['id']%>
-            <td>
-              <iframe src="<%%=test%>" width="200" height="50" frameborder="0" allowtransparency="true"></iframe>
-            </td>
-            <td class="song_id"> <td>
-              <form action="/favorites" method="post">
+            <li>
+              <iframe class="result-line" src="<%%=test%>" width="400" height="100" frameborder="0" allowtransparency="true"></iframe>
+
+              <form id="fav-button" class="result-line" action="/favorites" method="post">
                 <input type="hidden" name="user[token]" value="<%= @user.token %>"/>
+                <input type="hidden" name="favorite[spotify_url]" value="<%%=test%>">
                 <input type="hidden" name="favorite[user_id]" value="<%= @user.id %>"/>
                 <input id='song_id' type="hidden" name="favorite[song_id]" value=""/>
                 <input class ="button" type="submit" value="*">
               </form>
-            </div>
-
-         </tr>
-
-     </tbody>
-
-     </table>
+                </li>
+      </ul>
 
   </script>
 
 </head>
+
 <body>
 <%= render "navbar" %>
 <input type="hidden" id="api-token" value='<%=@user.token%>'>
@@ -57,13 +47,17 @@
       <div class="col s2">
         <h5>Favorites</h5>
         <% @favorites.each do |favorite| %>
-        <h6><%= favorite.song_id %>
+         <iframe class="result-line" src="<%= favorite.spotify_url %>" width="80" height="80" frameborder="0" allowtransparency="true"></iframe >
+          <h6><% Song.where("id=?",favorite.song_id).each do |song| %>
+            <!-- <%Movie.where("id=?",)%> -->
+            <%=song.name%>
+          <%end%>
         <form action="/favorites/<%= favorite.id %>" method="post">
         <input type="hidden" name="_method" value="delete">
         <button  type="submit"> x </button>
       </h6>
     </form>
-<% end %>
+    <% end %>
       </div>
 
       <div class="col s10">
@@ -82,14 +76,9 @@
             </div>
 
            <div class="spotify-el">
-
-
-      </div>
-
+            <h2>Songs</h2>
+          </div>
     </div>
-
-
-
 
 <%= button_to 'Log Out', log_out_path, method: :delete %><a href="/users/<%=@user.id%>/edit">Edit Profile</a>
 </body>
