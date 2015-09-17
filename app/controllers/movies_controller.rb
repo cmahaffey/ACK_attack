@@ -28,7 +28,7 @@ class MoviesController < ApplicationController
 # <<<<<<< HEAD
 
   songs = "movies.name=#{movie_params}"
-  puts movie_params
+  puts params[:mname]
   render json: Song.joins(:movie).where("lower(movies.name) = ?", params[:name].downcase)
 
 # =======
@@ -54,7 +54,7 @@ class MoviesController < ApplicationController
   private
   def movie_params
 
-    params.permit(:name)
+    params.permit(:name, :mname)
 
   end
 

@@ -1,4 +1,9 @@
+<% if current_user %>
+<%= render "navbarloggedin" %>
+<% else %>
 <%= render "navbar" %>
+<% end %>
+
 <h2>Update your information, <%=@user.username%></h2>
 
 <%= form_for(@user, url: user_update_path, method: :put) do |f| %>

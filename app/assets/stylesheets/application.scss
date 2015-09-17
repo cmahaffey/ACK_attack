@@ -91,7 +91,7 @@ h2{
 }
 
 #fav-column{
-  border-left: 1px solid grey;
+  border-right: 1px solid grey;
 }
 
 #film-poster{
@@ -114,4 +114,21 @@ h2{
 
 .result-line{
   display: inline-block;
+}
+
+#fav-delete{
+  height: 10px;
+  width: 10px;
+  line-height: .5em;
+  padding-left: 5%;
+  font-size: .75em;
+  margin-bottom: 25%;
+}
+
+#fav{
+  list-style: none;
+}
+
+.spotify-el{
+  border-top: 1px solid grey;
 }

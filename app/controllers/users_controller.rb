@@ -3,6 +3,7 @@ include SessionsHelper
 
 
   def index
+  @user = current_user
   @users = User.all.shuffle
   end
 
@@ -24,7 +25,7 @@ include SessionsHelper
   end
 
   def search
-
+    @user = current_user
   end
 
   def create
