@@ -19,6 +19,7 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
          })
 
 var year;
+
 if(year == 'undefined'){
   url = 'http://www.omdbapi.com/?t='+search+'&y='+year+'&plot=short&r=json'
  }else{

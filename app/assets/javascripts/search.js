@@ -17,13 +17,29 @@ $( document ).ready(function() {
           name: $('#query').val()
         }
     }).done(function(data, search){
-      console.log(data[0].name);
-      console.log(data[0].year);
+      console.log(data[0].id);
 
+      song_find(data[0].id)
 
     });
-
-
   });
+
+
 });
-movie
+
+function song_find(movie){
+  $.ajaxSetup({
+        headers:{
+          "accept": "application/json"
+        }});
+  $.ajax({
+   url:'/json',
+   dataType: 'json',
+   data:  {
+       movie_id: movie.id
+     }
+  }).done(function(data, search){
+   console.log(data);
+  });
+
+}
