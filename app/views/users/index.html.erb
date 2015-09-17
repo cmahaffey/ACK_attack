@@ -22,7 +22,15 @@
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">Bio<i class="material-icons right">close</i></span>
           <p><%= user.bio %></p>
-            <iframe class="result-line" src="<%=user.favorites.sample.spotify_url %>" width="80" height="80" frameborder="0" allowtransparency="true"></iframe >
+
+
+
+<%user.favorites.each do |favs|%>
+<iframe class="result-line" src="<%=favs.spotify_url%>" width="80" height="80" frameborder="0" allowtransparency="true"></iframe >
+<%end%>
+
+
+
         </div>
       </div>
     </div>
