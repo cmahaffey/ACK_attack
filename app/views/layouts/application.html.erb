@@ -7,50 +7,7 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
-  <script type="text/template", id='movieListtempplate'>
-    <%% _.each(movies, function(movie) { %>
-    <div class="row">
-      <div class="col s6">
-        <img id="film-poster" src="<%%= movie.get('Poster')%>" alt="No Poster Available" />
-      </div>
-      <div class="col s6">
-        <h3><%%= movie.get('Title') %></h3>
-            <%%= movie.get('Actors') %>
-        <p><%%= movie.get('Plot') %><p>
-      </div>
-    </div>
-    <%% }); %>
-  </script>
-
-  <script type="text/template", id='albumListtempplate'>
-     <table class="table striped">
-       <thead>
-         <tr>
-           <th>Songs</th>
-         </tr>
-     </thead>
-     <%% track = tracks[0]["attributes"]["tracks"]["items"][0]%>
-         <tr>
-            <%%test = "https://embed.spotify.com/?uri=spotify:track:"+track['id']%>
-            <td>
-              <iframe src="<%%=test%>" width="200" height="50" frameborder="0" allowtransparency="true"></iframe>
-            </td>
-            <td class="song_id"> <td>
-
-      <form action="/../favorites" method="post">
-        <input type="hidden" name="favorite[user_id]" value="<%= @user.id %>"/>
-        <input type="hidden" name="favorite[song_id]" value="song_id"/>
-        <input class ="button" type="submit" value="*">
-      </form>
-
-         </tr>
-
-     </tbody>
-
-     </table>
-
-  </script>
-
+  
 </head>
 
 <body class="<%= @home_page ? 'homepage' : ''%>">
