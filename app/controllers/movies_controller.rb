@@ -19,10 +19,11 @@ class MoviesController < ApplicationController
   end
 
   def songsapi
-  #render json:  Movie.joins(:songs)
-  songs = "movies.name='Back to the Future'"
-  render json: Song.joins(:movie).where(songs)
-  #render json: Movie.joins("RIGHT JOIN ON songs.movie_id = movie.id")
+
+  songs = "movies.name=#{movie_params}"
+  puts movie_params
+  render json: Song.joins(:movie).where("movies.name = ?", params[:name])
+
   end
 
   def show

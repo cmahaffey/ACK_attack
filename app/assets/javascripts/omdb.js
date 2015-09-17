@@ -27,8 +27,6 @@ function movieInfo(search, year){
               var template = _.template($('#movieListtempplate').html(), {movies: movies.models}); //cant get this to render on the page. If I put in album instead of all allalbums it just puts{objectobject}on the screen] trying to figure it out}
              var movie = movies.models
 
-  console.log(movies.models)
-
             that.$el.html(template)
              }
          })

@@ -15,12 +15,14 @@ $( document ).ready(function() {
     $.ajax({
       url:'/songs/api',
       dataType: 'json',
-      data:  {
-          name: $('#query').val()
-        }
+      data:
+          {
+            name:$('#query').val()
+
+       }
     }).done(function(data){
-      console.log(data[0].name);
-      console.log(data[0].artist);
+      console.log(data);
+      //console.log(data[0].artist);
 
 
       songInfo(data[0].name, data[0].artist)
