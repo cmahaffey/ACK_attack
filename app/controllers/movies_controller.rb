@@ -7,12 +7,22 @@ class MoviesController < ApplicationController
      puts @movie
   end
 
+
+
+
   def api
     puts 'x'*30
     puts movie_params||"haha, you failed"
     #{name => :title}
     puts 'x'*30
     render json: Movie.where(movie_params)
+  end
+
+  def songsapi
+  #render json:  Movie.joins(:songs)
+  songs = "movies.name='Back to the Future'"
+  render json: Song.joins(:movie).where(songs)
+  #render json: Movie.joins("RIGHT JOIN ON songs.movie_id = movie.id")
   end
 
   def show

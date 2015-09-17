@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post '/users'  => 'users#create'
   get '/log_in'  => 'users#log_in'
 
+
   get '/users/profile' => 'users#profile', as: :user_profile
 
   post '/users/profile' => 'users#profile'
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
 
   #song routes
   get '/songs' => 'songs#index'
+  get '/songs/api' => 'movies#songsapi'
 
   #movie Routes
   get '/movies' => 'movies#index'
