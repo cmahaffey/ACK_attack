@@ -3,11 +3,12 @@ include SessionsHelper
 
 
   def index
+  @user = current_user
   @users = User.all.shuffle
   end
 
   def log_in
-
+    @user = current_user
   end
 
   def profile

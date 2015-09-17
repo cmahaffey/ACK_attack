@@ -1,0 +1,14 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" id="nav-logo">soundtrak</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/">Home</a></li>
+      <li><a href="/users/profile">Profile</a></li>
+      <li><a href="/users">Community</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/users/<%=@user.id%>/edit">Edit Profile</a></li>
+      <li> <%= link_to 'Log Out',  log_out_path, method: :delete %> <li>
+    </ul>
+  </div>
+</nav>
+<br>

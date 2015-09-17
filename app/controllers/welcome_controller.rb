@@ -1,17 +1,17 @@
 class WelcomeController < ApplicationController
+  include SessionsHelper
 
-def about
-
-end
-
+  def about
+    authenticate!
+    @user = current_user
+  end
 
   def index
     @home_page = true
-
   end
 
-  def results
-
-  end
-
+  # def search
+  #   authenticate!
+  #   @user = current_user
+  # end
 end

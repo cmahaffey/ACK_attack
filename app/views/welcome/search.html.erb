@@ -1,4 +1,40 @@
+<head>
+  <script type="text/template", id='movieListtempplate'>
+    <%% _.each(movies, function(movie) { %>
+    <div class="row">
+      <div class="col s6">
+        <img id="film-poster" src="<%%= movie.get('Poster')%>" alt="No Poster Available" />
+      </div>
+      <div class="col s6">
+        <h3><%%= movie.get('Title') %></h3>
+            <%%= movie.get('Actors') %>
+        <p><%%= movie.get('Plot') %><p>
+      </div>
+    </div>
+    <%% }); %>
+  </script>
+
+  <script type="text/template", id='albumListtempplate'>
+    <ul>
+     <%% track = tracks[0]["attributes"]["tracks"]["items"][0]%>
+            <%%test = "https://embed.spotify.com/?uri=spotify:track:"+track['id']%>
+            <li>
+              <iframe class="result-line" src="<%%=test%>" width="400" height="100" frameborder="0" allowtransparency="true"></iframe>
+                </li>
+      </ul>
+
+  </script>
+
+</head>
+
+
+
+<body>
+<% if current_user %>
+<%= render "navbarloggedin" %>
+<% else %>
 <%= render "navbar" %>
+<% end %>
 
 <div class="container">
   <h2>Search for a Movie</h2>
@@ -12,3 +48,4 @@
 </div>
 <div class="spotify-el">
 </div>
+</body>

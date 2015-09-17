@@ -1,4 +1,8 @@
+<% if current_user %>
+<%= render "navbarloggedin" %>
+<% else %>
 <%= render "navbar" %>
+<% end %>
 
 
 <%= form_tag '/sessions', method: :post do %>

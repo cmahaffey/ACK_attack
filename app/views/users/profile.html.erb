@@ -36,7 +36,12 @@
 </head>
 
 <body>
-<%= render "navbar" %>
+  <% if current_user %>
+  <%= render "navbarloggedin" %>
+  <% else %>
+  <%= render "navbar" %>
+  <% end %>
+
 <input type="hidden" id="api-token" value='<%=@user.token%>'>
 
 
@@ -68,6 +73,10 @@
                 <input type="text" id="query" name="title" class="form-control" placeholder="Type Your Movie Here"/>
                 <input type="submit" id="search" class="btn btn-primary" value="Search" />
             </form>
+            <form action="/users/profile">
+                <input type="submit" class="btn btn-primary" value="Search Again" />
+            </form>
+
             <div class="movie-el">
 
             </div>
@@ -79,6 +88,3 @@
             <h2>Songs</h2>
           </div>
     </div>
-
-<%= button_to 'Log Out', log_out_path, method: :delete %><a href="/users/<%=@user.id%>/edit">Edit Profile</a>
-</body>
