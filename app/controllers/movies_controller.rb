@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
     #{name => :title}
     puts 'x'*30
 
-    render json: Movie.where(movie_params)
+    render json: Movie.where("lower(name) = ?", params[:name].downcase)
     # @movie.each do |movie|
     #   @songs= Song.where("movie_id = #{movie.id}")
     # end
@@ -29,7 +29,7 @@ class MoviesController < ApplicationController
 
   songs = "movies.name=#{movie_params}"
   puts movie_params
-  render json: Song.joins(:movie).where("movies.name = ?", params[:name])
+  render json: Song.joins(:movie).where("lower(movies.name) = ?", params[:name].downcase)
 
 # =======
 #   #render json:  Movie.joins(:songs)
