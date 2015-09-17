@@ -28,8 +28,12 @@ class MoviesController < ApplicationController
 # <<<<<<< HEAD
 
   songs = "movies.name=#{movie_params}"
-  puts params[:mname]
-  render json: Song.joins(:movie).where("lower(movies.name) = ?", params[:name].downcase)
+  puts params[:name]
+  movies=Movie.where("lower(name) = ?", params[:name].downcase)
+  songs=movies.map do |movie|
+    movie.id
+  end
+  render json: Song.joins(:movie).where("movies.id = ?", songs[songs.length-1])
 
 # =======
 #   #render json:  Movie.joins(:songs)

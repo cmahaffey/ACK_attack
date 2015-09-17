@@ -5,6 +5,7 @@ include SessionsHelper
   def index
   @user = current_user
   @users = User.all.shuffle
+  @favorites = Favorite.all
   end
 
   def log_in

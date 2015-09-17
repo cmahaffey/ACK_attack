@@ -18,8 +18,13 @@ if file
   file.split(/\n\n/).each do |film|
 
 
+<<<<<<< HEAD
     if counter <= 1000
 
+=======
+
+     if counter <= 10000
+>>>>>>> da0d625f5cfb60cfa493beeef12f7226fad9d43d
       if film && found = film.scan( /# .+/ )
         line = found[0]
         if line
