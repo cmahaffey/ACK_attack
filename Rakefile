@@ -16,7 +16,7 @@ if file
     a=[]
   file.split(/\n\n/).each do |film|
 
-    if counter <= 500
+    if counter <= 10000
       if film && found = film.scan( /# .+/ )
         line = found[0]
         if line
@@ -35,22 +35,20 @@ if file
               soundtrack_info.push({
                 artist: artists[index] || nil,
                 song: song[0].gsub("\"","") || nil,
-                # movie_id: counter
                 })
                 index +=1
             end
 
+              unless line[0..2]=="\# \""
+                data.push({
+                  title: line.scan( /# (.*?) \(/ )[0][0].gsub("\"",""),
+                  year: line.scan( /\((.*?)\)/ )[0][0],
+                  song_info: soundtrack_info
+                })
 
-            data.push({
-              title: line.scan( /# "(.*?)"/ )[0][0].gsub("\"",""),
-              year: line.scan( /\((.*?)\)/ )[0][0].gsub("\"",""),
-              # artist: line.scan( /{(.*?)}/ )[0],
-              # artist: film.scan( /Performed by '(.*?)'/ ),
-              # songs: film.scan( /- "(.*?)"/ )
-              song_info: soundtrack_info
-            })
+              end
 
-            counter += 1
+
           end #if end
         end
       end
@@ -69,7 +67,6 @@ namespace :db do
     data.each do |datum|
       m=Movie.create({
           name: datum[:title],
-          search: datum[:title],
           year:  datum[:year]
         })
       datum[:song_info].each do |song|
