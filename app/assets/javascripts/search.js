@@ -18,13 +18,11 @@ $( document ).ready(function() {
         }
 
     }).done(function(data){
-      // console.log(data[0].name);
-      //console.log(data[0].year);
 
-      movieInfo(data[0].name,data[0].year)
-     //test(data[data.length-1].name)
+      movieInfo(data[data.length -1].name,data[data.length -1].year)
 
-      // songInfo(data[0].id)
+
+
 
     });
   });

@@ -10,7 +10,7 @@ console.log('scripts')
   });
 
   var Track = Backbone.Collection.extend({
-    url: 'https://api.spotify.com/v1/search?q=track:'+song+'&type=track&limit=1',
+    url: 'https://api.spotify.com/v1/search?q=track:'+song+'%20artist:'+artist+'&type=track&limit=1',
   });
    var TrackList = Backbone.View.extend({
      el: '.spotify-el',
