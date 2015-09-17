@@ -31,7 +31,7 @@ var $moviename = $('#moviesong').val()
 
 
 for(i=0; i<data.length; i++){
-      songInfo(data[i].name, data[i].artist,data[i].id)
+      songInfo(data[i].name, data[i].artist, data[i].id);
 }
     });
 

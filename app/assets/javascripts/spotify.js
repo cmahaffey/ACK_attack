@@ -16,17 +16,24 @@ console.log('scripts')
      el: '.spotify-el',
      render: function(){
        var that = this;
-       that.$el.empty()
-       var track = new Track()
+       that.$el.empty();
+       var track = new Track();
          track.fetch({
            success: function(track){
           //  that.$el.empty();
-           var template = _.template($('#albumListtempplate').html(), {tracks: track.models, song: $song_id}); //cant get this to render on the page. If I put in album instead of all allalbums it just puts{objectobject}on the screen] trying to figure it out}
+
+          // var $song_id = $( '<input>' ).attr({
+          //   type: 'hidden',
+          //   name: 'favorite[song_id]',
+          //   value: song_id
+          // });
+           var template = _.template($('#albumListtempplate').html(), {tracks: track.models, song_id: song_id}); //cant get this to render on the page. If I put in album instead of all allalbums it just puts{objectobject}on the screen] trying to figure it out}
            var trackm = track.models
            //console.log(song_id)
-          that.$el.append(template)
-          var $song_id = $('#song_id')
-          //$song_id.val(song_id)
+
+          that.$el.append(template);
+
+
            }
        })
      }
