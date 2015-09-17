@@ -16,7 +16,11 @@ if file
     a=[]
   file.split(/\n\n/).each do |film|
 
+<<<<<<< HEAD
+    if counter <= 1000
+=======
      if counter <= 10000
+>>>>>>> 3a1c7212fd066881a733e39dcf03e1ac90aa0143
       if film && found = film.scan( /# .+/ )
         line = found[0]
         if line
@@ -40,12 +44,31 @@ if file
             end
 
               unless line[0..2]=="\# \""
-                data.push({
-                  title: line.scan( /# (.*?) \(/ )[0][0].gsub("\"",""),
-                  year: line.scan( /\((.*?)\)/ )[0][0],
-                  song_info: soundtrack_info
-                })
+                if line[0..3]=="\# Al"
+                  data.push({
+                    title: line.scan( /# (.*?) \(/ )[0][0].gsub("\"",""),
+                    year: line.scan( /\((.*?)\)/ )[0][0],
 
+                    song_info: soundtrack_info
+                  })
+                  counter += 1
+                elsif line[0..5]=="\# Rush"
+                  data.push({
+                    title: line.scan( /# (.*?) \(/ )[0][0].gsub("\"",""),
+                    year: line.scan( /\((.*?)\)/ )[0][0],
+
+                    song_info: soundtrack_info
+                  })
+                  counter += 1
+                elsif line[0..4]=="\# Fro"
+                  data.push({
+                    title: line.scan( /# (.*?) \(/ )[0][0].gsub("\"",""),
+                    year: line.scan( /\((.*?)\)/ )[0][0],
+
+                    song_info: soundtrack_info
+                  })
+                  counter += 1
+                end
               end
 
 
