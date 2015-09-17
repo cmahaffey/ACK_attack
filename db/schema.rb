@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150916175208) do
     t.string   "username"
     t.string   "password_digest"
     t.string   "email"
-    t.string   "pic_url",         default: "https://lh3.googleusercontent.com/-CSGikRvTw8k/SgL_L0G9BHI/AAAAAAABCyc/FuVvq_nfMK8/s200-Ic42/d_silhouette_horn_hand.jpg"
+    t.string   "pic_url", default: "https://lh3.googleusercontent.com/-CSGikRvTw8k/SgL_L0G9BHI/AAAAAAABCyc/FuVvq_nfMK8/s200-Ic42/d_silhouette_horn_hand.jpg"
     t.datetime "created_at",                                                                                                                                          null: false
     t.datetime "updated_at",                                                                                                                                          null: false
     t.text     "bio"

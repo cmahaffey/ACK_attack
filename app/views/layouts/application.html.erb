@@ -35,6 +35,11 @@
             <td>
               <iframe src="<%%=test%>" width="200" height="50" frameborder="0" allowtransparency="true"></iframe>
             </td>
+            <form action="/../favorites" method="post">
+        <input type="hidden" name="favorite[user_id]" value="<%= @user.id %>"/>
+        <input type="hidden" name="favorite[song_id]" value="<%= @song.id %>"/>
+        <input class ="button" type="submit" value="*">
+      </form>
          </tr>
 
      </tbody>

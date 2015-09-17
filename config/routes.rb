@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   #Favorite routes
   post '/favorites' => 'favorites#create'
-  delete '/favorites' => 'favorties#destroy'
+  delete '/favorites/:id' => 'favorties#destroy'
 
   #song routes
   get '/songs' => 'songs#index'
