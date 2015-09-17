@@ -1,3 +1,21 @@
+<%if current_user %>
+<div class="row">
+  <div class = "col s2">
+    <a class='dropdown-button btn red accent-2' href='#' data-activates='nav-options'>Menu</a>
+      <ul id='nav-options' class='dropdown-content'>
+        <li><a href="/" class="red-text text-accent-2">Home</a></li>
+        <li class="divider"></li>
+        <li><a href="/about" class="red-text text-accent-2">About</a></li>
+        <li class="divider"></li>
+        <li><a href="/users/profile" class="red-text text-accent-2">Profile</a></li>
+        <li class="divider"></li>
+        <li><a href="/users" class="red-text text-accent-2">Community</a></li>
+        <li class="divider"></li>
+        <li class="red-text text-accent-2"><%= link_to 'Log Out',  log_out_path, method: :delete %></li>
+      </ul>
+  </div>
+</div>
+<%else%>
 <div class="row">
   <div class = "col s2">
     <a class='dropdown-button btn red accent-2' href='#' data-activates='nav-options'>Menu</a>
@@ -16,7 +34,7 @@
       </ul>
   </div>
 </div>
-
+<%end%>
 
 <div class="row">
   <div class="col s12">

@@ -8,7 +8,7 @@ include SessionsHelper
   end
 
   def log_in
-    @user = current_user
+
   end
 
   def profile
@@ -25,7 +25,7 @@ include SessionsHelper
   end
 
   def search
-
+    @user = current_user
   end
 
   def create

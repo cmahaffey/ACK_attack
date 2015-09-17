@@ -10,8 +10,7 @@ class WelcomeController < ApplicationController
     @home_page = true
   end
 
-  # def search
-  #   authenticate!
-  #   @user = current_user
-  # end
+def search
+  @user = current_user
+end
 end

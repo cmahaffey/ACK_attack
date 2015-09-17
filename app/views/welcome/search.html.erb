@@ -38,10 +38,13 @@
 
 <div class="container">
   <h2>Search for a Movie</h2>
-  <form id="search-form">
-    <input type="text" id="query" value="" class="form-control" placeholder="Type Your Movie Here"/>
-    <input type="submit" id="search" class="btn btn-primary red lighten-2" value="Search" />
+
+
+  <form id="search-form" action="/json">
+      <input type="text" id="query" name="title" class="form-control" placeholder="Type Your Movie Here"/>
+      <input type="submit" id="search" class="btn btn-primary" value="Search" />
   </form>
+
   <div id="results"></div>
 </div>
 <div class="movie-el">
