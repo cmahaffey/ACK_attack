@@ -1,14 +1,54 @@
+<head>
+  <script type="text/template", id='movieListtempplate'>
+    <%% _.each(movies, function(movie) { %>
+    <div class="row">
+      <div class="col s6">
+        <img id="film-poster" src="<%%= movie.get('Poster')%>" alt="No Poster Available" />
+      </div>
+      <div class="col s6">
+        <h3><%%= movie.get('Title') %></h3>
+            <%%= movie.get('Actors') %>
+        <p><%%= movie.get('Plot') %><p>
+      </div>
+    </div>
+    <%% }); %>
+  </script>
+
+  <script type="text/template", id='albumListtempplate'>
+    <ul>
+     <%% track = tracks[0]["attributes"]["tracks"]["items"][0]%>
+            <%%test = "https://embed.spotify.com/?uri=spotify:track:"+track['id']%>
+            <li>
+              <iframe class="result-line" src="<%%=test%>" width="400" height="100" frameborder="0" allowtransparency="true"></iframe>
+                </li>
+      </ul>
+
+  </script>
+
+</head>
+
+
+
+<body>
+<% if current_user %>
+<%= render "navbarloggedin" %>
+<% else %>
 <%= render "navbar" %>
+<% end %>
 
 <div class="container">
   <h2>Search for a Movie</h2>
-  <form id="search-form">
-    <input type="text" id="query" value="" class="form-control" placeholder="Type Your Movie Here"/>
-    <input type="submit" id="search" class="btn btn-primary red lighten-2" value="Search" />
+
+
+  <form id="search-form" action="/json">
+      <input type="text" id="query" name="title" class="form-control" placeholder="Type Your Movie Here"/>
+      <input type="submit" id="search" class="btn btn-primary" value="Search" />
   </form>
+
   <div id="results"></div>
 </div>
 <div class="movie-el">
 </div>
 <div class="spotify-el">
 </div>
+</body>

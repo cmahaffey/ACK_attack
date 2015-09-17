@@ -1,4 +1,9 @@
+<% if current_user %>
+<%= render "navbarloggedin" %>
+<% else %>
 <%= render "navbar" %>
+<% end %>
+
 <h1> soundtrak </h1>
 
 <h2 class="about-page">
