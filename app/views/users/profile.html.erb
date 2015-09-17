@@ -7,7 +7,7 @@
       </div>
       <div class="col s6">
         <h3><%%= movie.get('Title') %></h3>
-             <input id='moviesong' type="hidden" name="moviename" value="<%%= movie.get('Title') %>">
+             <input id='moviesong' type="hidden" name="moviename" value="<%=@movie.last.id  %>">
             <%%= movie.get('Actors') %>
         <p><%%= movie.get('Plot') %><p>
       </div>
