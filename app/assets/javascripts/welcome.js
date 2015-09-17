@@ -5,6 +5,8 @@
 
  $(function() { //start after HTML, images have loaded
 
+   $(".main-head").fadeIn("slow");
+
 
   $('#search-button').hover(function(){
     $(this).css("border", "2px solid white");

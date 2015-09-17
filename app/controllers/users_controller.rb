@@ -13,10 +13,7 @@ include SessionsHelper
   def profile
     authenticate!
     @user = current_user
-
-
     @movie=Movie.where(movie_params)||nil
-
   end
 
 
