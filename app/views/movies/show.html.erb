@@ -5,7 +5,7 @@
     <h2 class="title"><%=mov.name%></h2>    <h2 class="year"><%=mov.year%></h2>
   </div>
   <ul class="song-data">
-    <%=mov.songs.each do |song|%>
+    <%=@songs.each do |song|%>
       <li class="spotify">
         <h4 class="song_name"><%=song.name%></h4> <h4 class="artist"><%if song.artist==nil%>none <%else%> <%=song.artist%> <%end%></h4>
       </li>

@@ -33,6 +33,7 @@ function movieInfo(search, year){
        }
      });
 
+
   var movieList = new MovieList();
   movieList.render();
 }

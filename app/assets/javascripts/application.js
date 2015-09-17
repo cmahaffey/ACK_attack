@@ -18,5 +18,5 @@
 //= require welcome
 //= require_tree
 //= require_omdb
-//= require_search
 //= require_spotify
+//= require_search
