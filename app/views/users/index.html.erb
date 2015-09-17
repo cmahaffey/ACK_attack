@@ -8,6 +8,7 @@
 <h2 class="community">Check out some of our other users!</h2>
 
 <div class="row">
+
   <% @users.each_with_index do |user, index| %>
     <div class="col s3">
       <div class="card">
@@ -21,6 +22,7 @@
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">Bio<i class="material-icons right">close</i></span>
           <p><%= user.bio %></p>
+            <iframe class="result-line" src="<%=user.favorites.sample.spotify_url %>" width="80" height="80" frameborder="0" allowtransparency="true"></iframe >
         </div>
       </div>
     </div>
