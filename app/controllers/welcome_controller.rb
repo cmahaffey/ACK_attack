@@ -2,7 +2,6 @@ class WelcomeController < ApplicationController
   include SessionsHelper
 
   def about
-    authenticate!
     @user = current_user
   end
 
