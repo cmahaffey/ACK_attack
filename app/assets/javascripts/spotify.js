@@ -1,10 +1,7 @@
 console.log('scripts')
- $( document ).ready(function() {
 
-   document.getElementById('search-form').addEventListener('submit', function (e) {
-         e.preventDefault();
-        song = ['in da club', 'fight song', 'in da club']
-        artist = ['50 cent', 'rachel platten', '50 cent']
+
+  function songInfo(song, artist){
 
   $.ajaxSetup({
      headers:{
@@ -12,9 +9,9 @@ console.log('scripts')
            }
   });
 
-for(i=0; i<song.length; i++){
+
   var Track = Backbone.Collection.extend({
-    url: 'https://api.spotify.com/v1/search?q=track:'+song[i]+'%20artist:'+artist[i]+'&type=track&limit=1',
+    url: 'https://api.spotify.com/v1/search?q=track:'+song+'%20artist:'+artist+'&type=track&limit=1',
   });
    var TrackList = Backbone.View.extend({
      el: '.spotify-el',
@@ -35,6 +32,3 @@ for(i=0; i<song.length; i++){
 var trackList = new TrackList();
 trackList.render();
 }
-}, false);
-
-});

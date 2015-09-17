@@ -16,10 +16,15 @@ $( document ).ready(function() {
       data:  {
           name: $('#query').val()
         }
-    }).done(function(data, search){
-      console.log(data[0].id);
 
-      song_find(data[0].id)
+    }).done(function(data){
+      // console.log(data[0].name);
+      // console.log(data[0].year);
+
+      movieInfo(data[0].name,data[0].year)
+
+
+      // songInfo(data[0].id)
 
     });
   });
@@ -27,19 +32,20 @@ $( document ).ready(function() {
 
 });
 
-function song_find(movie){
-  $.ajaxSetup({
-        headers:{
-          "accept": "application/json"
-        }});
-  $.ajax({
-   url:'/json',
-   dataType: 'json',
-   data:  {
-       movie_id: movie.id
-     }
-  }).done(function(data, search){
-   console.log(data);
-  });
-
-}
+//
+// function song_find(movie){
+//   $.ajaxSetup({
+//         headers:{
+//           "accept": "application/json"
+//         }});
+//   $.ajax({
+//    url:'/json',
+//    dataType: 'json',
+//    data:  {
+//        movie_id: movie.id
+//      }
+//   }).done(function(data, search){
+//    console.log(data);
+//   });
+//
+// }

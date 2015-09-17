@@ -35,9 +35,9 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 gem 'iconv'
 
-group :production do
-  gem 'rails_12factor'
-end
+
+gem 'rails_12factor', group: :production
+
 
 
 

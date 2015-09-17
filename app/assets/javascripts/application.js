@@ -17,6 +17,6 @@
 //= require backbone
 //= require welcome
 //= require_tree
-//= require_search
 //= require_omdb
 //= require_spotify
+//= require_search

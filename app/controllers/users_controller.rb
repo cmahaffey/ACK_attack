@@ -3,7 +3,7 @@ include SessionsHelper
 
 
   def index
-  @users = User.all
+  @users = User.all.shuffle
   end
 
   def log_in
@@ -13,9 +13,7 @@ include SessionsHelper
   def profile
     authenticate!
     @user = current_user
-
     @movie=Movie.where(movie_params)||nil
-
   end
 
 

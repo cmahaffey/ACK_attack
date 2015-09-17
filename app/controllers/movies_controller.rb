@@ -7,6 +7,9 @@ class MoviesController < ApplicationController
      puts @movie
   end
 
+
+
+
   def api
     puts 'x'*30
     puts movie_params||"haha, you failed"
@@ -20,7 +23,14 @@ class MoviesController < ApplicationController
 
   end
 
-  def
+
+  def songsapi
+  #render json:  Movie.joins(:songs)
+  songs = "movies.name='#{params[:name]}'"
+  render json: Song.joins(:movie).where(songs)
+  #render json: Movie.joins("RIGHT JOIN ON songs.movie_id = movie.id")
+  end
+
 
   def show
     # puts 'x'*30
@@ -35,7 +45,7 @@ class MoviesController < ApplicationController
 
   private
   def movie_params
-    params[:name]="A Escrava Isaura"
+
     params.permit(:name)
 
   end
