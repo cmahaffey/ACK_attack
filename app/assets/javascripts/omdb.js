@@ -6,9 +6,10 @@ function movieInfo(search, year){
                "accept": "application/json"
              }
            })
-
-  if(year == 'undefined'){
+ console.log(year)
+  if(year != 'undefined'){
     url = 'http://www.omdbapi.com/?t='+search+'&y='+year+'&plot=short&r=json'
+
    }else{
      url = 'http://www.omdbapi.com/?t='+search+'&y=&plot=short&r=json'
    }

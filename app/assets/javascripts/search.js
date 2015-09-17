@@ -19,7 +19,7 @@ $( document ).ready(function() {
 
     }).done(function(data){
       // console.log(data[0].name);
-      // console.log(data[0].year);
+      console.log(data[0].year);
 
       movieInfo(data[0].name,data[0].year)
 

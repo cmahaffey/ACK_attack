@@ -14,6 +14,7 @@ include SessionsHelper
     authenticate!
     @user = current_user
     @movie=Movie.where(movie_params)||nil
+    #binding.pry
   end
 
 
