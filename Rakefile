@@ -16,7 +16,7 @@ if file
     a=[]
   file.split(/\n\n/).each do |film|
 
-    if counter <= 10000
+    if counter <= 3000
       if film && found = film.scan( /# .+/ )
         line = found[0]
         if line
@@ -27,25 +27,50 @@ if file
             songs = film.scan( /- "(.*?)"/ )
 
 
-            index = 0
-            songs.each do |song|
-              unless artists[index]==nil
-                artists[index]=artists[index][0].gsub("\"","")
-              end
-              soundtrack_info.push({
-                artist: artists[index] || nil,
-                song: song[0].gsub("\"","") || nil,
-                })
-                index +=1
-            end
+            # index = 0
+            # songs.each do |song|
+            #   # unless artists[index]==nil
+            #   #   artists[index]=artists[index][0].gsub("\"","")
+            #   # else
+            #   #   artists[index]="N/A"
+            #   # end
+            #   # unless film.scan( /- "(.*?)"/ )[index]==nil
+            #   #   song= film.scan( /- "(.*?)"/ )[index][0].gsub("\"","")
+            #   # end
+            #   # if film.scan( /Performed by '(.*?)'/ )[index]==nil
+            #   #   artist= nil
+            #   # else
+            #   #   artist= film.scan( /Performed by '(.*?)'/ )[index][0].gsub("\"","")
+            #   # end
+            #   # soundtrack_info.push({
+            #   #   song: song,
+            #   #   artist: artist
+            #   #   #[0].gsub("\"","") || nil,
+            #   #   })
+            #   #   index +=1
+            # end
 
               unless line[0..2]=="\# \""
-                data.push({
-                  title: line.scan( /# (.*?) \(/ )[0][0].gsub("\"",""),
-                  year: line.scan( /\((.*?)\)/ )[0][0],
-                  song_info: soundtrack_info
-                })
+                if line[0..2]=="\# A"
+                  if film.scan( /Performed by '(.*?)'/ ).empty?
+                    artist=nil
+                  else
+                    artist= film.scan( /Performed by '(.*?)'/ )[0][0].gsub("\"","")
+                  end
+                  unless film.scan( /- "(.*?)"/ ).empty?
+                    song= film.scan( /- "(.*?)"/ )[0][0].gsub("\"","")
 
+                  end
+                  data.push({
+                    title: line.scan( /# (.*?) \(/ )[0][0].gsub("\"",""),
+                    year: line.scan( /\((.*?)\)/ )[0][0],
+                    song_info: {
+                      song: song,
+                      artist: artist
+                    }
+                  })
+                  counter+=1
+                end
               end
 
 
@@ -70,12 +95,23 @@ namespace :db do
           year:  datum[:year]
         })
       datum[:song_info].each do |song|
+        i=0
+        while i<song.length
         Song.create({
-          name: song[:song],
-          artist: song[:artist],
+          name: song,
+          artist: song,
           movie_id: m.id
           })
       end
     end
   end
+
+  # desc "seed Users"
+  # task :seed_users do
+  #   require './app/models/users'
+  #
+  #   User.create({
+  #     name:
+  #     })
+  # end
 end
