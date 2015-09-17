@@ -6,7 +6,7 @@ function movieInfo(search, year){
                "accept": "application/json"
              }
            })
- console.log(year)
+ //console.log(year)
   if(year != 'undefined'){
     url = 'http://www.omdbapi.com/?t='+search+'&y='+year+'&plot=short&r=json'
 
@@ -23,6 +23,7 @@ function movieInfo(search, year){
        render: function(){
          var that = this;
          var movie = new Movie()
+          that.$el.empty()
            movie.fetch({
              success: function(movies){
               var template = _.template($('#movieListtempplate').html(), {movies: movies.models}); //cant get this to render on the page. If I put in album instead of all allalbums it just puts{objectobject}on the screen] trying to figure it out}

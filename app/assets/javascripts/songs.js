@@ -7,7 +7,7 @@ $( document ).ready(function() {
   document.getElementById('search-form').addEventListener('submit', function (e) {
       e.preventDefault();
       search = document.getElementById('query').value;
-
+var $moviename = $('#moviesong').val()
      $.ajaxSetup({
            headers:{
              "accept": "application/json"
@@ -21,7 +21,9 @@ $( document ).ready(function() {
 
        }
     }).done(function(data){
-      console.log(data);
+
+ console.log($moviename)
+      //console.log(data);
       //console.log(data[0].artist);
 //console.log(data[0].id)
       // console.log(data[0]);
