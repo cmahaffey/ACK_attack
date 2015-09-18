@@ -6,6 +6,7 @@ include SessionsHelper
   @user = current_user
   @users = User.all.shuffle
   @favorites = Favorite.all
+  @songs = Song.all
   end
 
   def log_in

@@ -6,8 +6,7 @@ require './app/models/movie'
 require './app/models/song'
 
 Rails.application.load_tasks
-require './app/models/movie'
-require './app/models/song'
+
 require 'iconv'
 file_raw = File.read('./lib/assets/soundtracks.list')
 

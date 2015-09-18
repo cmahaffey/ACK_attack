@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html>
-<title>Hello Strapdown</title>
 
-<xmp theme="united" style="display:none;">
 # soundtrak
 #### A web based music search app that allows users to:
 
