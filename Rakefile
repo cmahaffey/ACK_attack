@@ -19,6 +19,7 @@ if file
   file.split(/\n\n/).each do |film|
 
 
+
      if counter <= 10000
 
       if film && found = film.scan( /# .+/ )

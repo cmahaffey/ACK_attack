@@ -21,6 +21,7 @@ console.log('scripts')
          track.fetch({
            success: function(track){
           //  that.$el.empty();
+
           // var $song_id = $( '<input>' ).attr({
           //   type: 'hidden',
           //   name: 'favorite[song_id]',
@@ -31,6 +32,7 @@ console.log('scripts')
            //console.log(song_id)
 
           that.$el.append(template);
+
 
            }
        })
