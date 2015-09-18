@@ -16,7 +16,7 @@ namespace :db do
       file.split(/\n\n/).each do |film|
 
 
-         if counter <= 10000
+         if counter <= 100
 
           if film && found = film.scan( /# .+/ )
             line = found[0]
