@@ -16,10 +16,10 @@ users = User.create([{username: 'Ron_Von_Crosler', password: 'hello', email: 'ro
    {username: 'beastmode', password: 'hello', email: 'marshawn@seahawks.com', pic_url: 'http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/LYN442976.png', bio: "I'm just here so I don't get fined.", location: 'Oakland, CA/Seattle, WA'}])
 
 
-favorites = Favorite.create([{user_id: 1, song_id: 554, favorited: T, spotify_url: },
-  {user_id: 2, song_id: 554, favorited: T, spotify_url: },
-  {user_id: 3, song_id: 554, favorited: T, spotify_url: },
-  {user_id: 4, song_id: 554, favorited: T, spotify_url: },
-  {user_id: 5, song_id: 554, favorited: T, spotify_url: },
-  {user_id: 6, song_id: 554, favorited: T, spotify_url: },
-  {user_id: 7, song_id: 554, favorited: T, spotify_url: },])
+favorites = Favorite.create([{user_id: 1, song_id: 554, favorited: T},
+  {user_id: 2, song_id: 554, favorited: T},
+  {user_id: 3, song_id: 554, favorited: T},
+  {user_id: 4, song_id: 554, favorited: T},
+  {user_id: 5, song_id: 554, favorited: T},
+  {user_id: 6, song_id: 554, favorited: T},
+  {user_id: 7, song_id: 554, favorited: T}])
