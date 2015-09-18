@@ -17,9 +17,9 @@ users = User.create([{username: 'Ron_Von_Crosler', password: 'hello', email: 'ro
 
 
 favorites = Favorite.create([{user_id: 1, song_id: 554, favorited: T},
-  {user_id: 2, song_id: 554, favorited: T},
-  {user_id: 3, song_id: 554, favorited: T},
-  {user_id: 4, song_id: 554, favorited: T},
-  {user_id: 5, song_id: 554, favorited: T},
-  {user_id: 6, song_id: 554, favorited: T},
-  {user_id: 7, song_id: 554, favorited: T}])
+  {user_id: 2, song_id: 554},
+  {user_id: 3, song_id: 554},
+  {user_id: 4, song_id: 554},
+  {user_id: 5, song_id: 554},
+  {user_id: 6, song_id: 554},
+  {user_id: 7, song_id: 554}])
