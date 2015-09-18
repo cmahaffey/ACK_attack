@@ -1,11 +1,11 @@
 namespace :db do
   desc "load IMDB's movie soundtrack data"
   task :load_movies => :environment do
-    require '../../app/models/movie'
-    require '../../app/models/song'
+    require '../app/models/movie'
+    require '../app/models/song'
     require 'iconv'
 
-    file_raw = File.read('../../lib/assets/soundtracks.list')
+    file_raw = File.read('../lib/assets/soundtracks.list')
 
     ic = Iconv.new('UTF-8//IGNORE', 'UTF-8')
     file = ic.iconv(file_raw)
