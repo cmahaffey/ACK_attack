@@ -16,7 +16,7 @@ namespace :db do
       file.split(/\n\n/).each do |film|
 
 
-         if counter <= 100
+         if counter <= 10000
 
           if film && found = film.scan( /# .+/ )
             line = found[0]
@@ -96,7 +96,7 @@ namespace :db do
                         song_info: soundtrack_info
                       })
                       counter += 1
-                    elsif line[0..7]=="\# Frozen"
+                    elsif line[0..4]=="\# Fro"
                       songs = film.split("-")[1..-1]
 
                       song_info = []
