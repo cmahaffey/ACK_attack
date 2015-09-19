@@ -22,9 +22,12 @@
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">Bio<i class="material-icons right">close</i></span>
           <p><%= user.bio %></p>
-          <h6> Here's a song that <%= user.username %> is in to:</h6>
+          <h6> Here's a song(s) that <%= user.username %> is in to:</h6>
             <%user.favorites.each do |favs|%>
-            <iframe class="result-line" src="<%=favs.spotify_url%>" width="80" height="80" frameborder="0" allowtransparency="true"></iframe >
+               <%song_id = favs.song_id%>
+              <%movie = Song.find(song_id).movie_id%>
+              <p><%=Song.find(song_id).name%> from the movie <%=Movie.find(movie).name%></p>
+              <iframe class="result-line" src="<%=favs.spotify_url%>" width="80" height="80" frameborder="0" allowtransparency="true"></iframe ><br>
             <%end%>
 
         </div>

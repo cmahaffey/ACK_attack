@@ -3,17 +3,15 @@
 
 
 
- $(function() { //start after HTML, images have loaded
+$(function() { //start after HTML, images have loaded
 
-   $(".main-head").fadeIn("slow");
+  $(".main-head").fadeIn("slow");
 
 
   $('#search-button').hover(function(){
     $(this).css("border", "2px solid white");
   }, function(){
     $(this).css("border", "none");
-});
+  });
 
 });
-
-  // console.log("got ya");
